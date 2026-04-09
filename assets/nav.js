@@ -1,6 +1,6 @@
 async function loadDiscordLink() {
   try {
-    const response = await fetch('assets/links/discord.txt');
+    const response = await fetch('/assets/links/discord.txt');
     if (!response.ok) {
       throw new Error('Discord link not found');
     }
@@ -21,7 +21,7 @@ async function loadNav() {
   if (!('fetch' in window)) return;
 
   try {
-    const response = await fetch('nav.html');
+    const response = await fetch('/assets/nav.html');
     if (!response.ok) {
       throw new Error('Nav file not found');
     }
