@@ -1,6 +1,6 @@
 async function loadDiscordLink() {
   try {
-    const response = await fetch('/assets/links/discord.txt');
+    response = await fetch('/assets/links/discord.txt');
     // Fallback message
     const discordUrl = "javascript:alert('Could not get URL, sorry.');"; 
     if (!response.ok) {
