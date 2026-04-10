@@ -1,1 +1,2 @@
-
+This file disables Github Page's default setting to use Jekyll,
+ which displays Markdown (.md) files instead of normal HTML.

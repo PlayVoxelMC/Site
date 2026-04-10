@@ -1,12 +1,15 @@
 async function loadDiscordLink() {
   try {
     const response = await fetch('/assets/links/discord.txt');
+    // Fallback message
+    const discordUrl = "javascript:alert('Could not get URL, sorry.');"; 
     if (!response.ok) {
-      throw new Error('Discord link not found');
+      console.error('Discord link not found');
+    } else {
+      discordUrl = (await response.text()).trim();
     }
-    const discordUrl = (await response.text()).trim();
     if (!discordUrl) {
-      throw new Error('Discord link empty');
+      console.error('Discord link empty');
     }
     const navLink = document.getElementById('nav-discord-link');
     const pageLink = document.getElementById('discord-block');
