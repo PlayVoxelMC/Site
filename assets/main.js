@@ -82,16 +82,23 @@ async function loadFooter() {
       false
     )
   } catch (error) {
-    console.error('Unable to load nav! ', error);
+    console.error('Unable to load footer! ', error);
   }
 }
 
-try {
-  if (!('fetch' in window)) throw new Error("Missing fetch function!");
+function initLayout() {
+  if (!('fetch' in window)) {
+    throw new Error('Missing fetch function!');
+  }
+
   loadLinks();
   loadNav();
   loadFooter();
   loadDiscordLinks();
-} catch (error) {
-  throw new Error("Failed to load navigation!", error)
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initLayout);
+} else {
+  initLayout();
 }
