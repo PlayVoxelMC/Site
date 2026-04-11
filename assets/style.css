@@ -33,9 +33,6 @@ a {
   &:hover, &:focus-visible {
     color: var(--text) !important;
   }
-  &:visited {
-    color: var(--accent);
-  }
 }
 
 /* nav */
@@ -58,7 +55,7 @@ nav {
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px);
 
-  a, a:visited {
+  a {
     color: var(--text);
   }
 
@@ -77,7 +74,7 @@ nav {
     margin: 0;
     padding: 0;
 
-    a, a:visited {
+    a {
       color: var(--muted);
       font-size: 0.95rem;
     }
